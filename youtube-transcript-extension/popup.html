@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Transcript Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>YouTube Transcript</h1>
+      <button id="settingsBtn" class="icon-btn" title="Settings">⚙️</button>
+    </div>
+    
+    <button id="extractBtn">Extract Transcript</button>
+    
+    <div id="status"></div>
+    
+    <!-- Search Bar -->
+    <div id="search-container" style="display: none;">
+      <input type="text" id="searchInput" placeholder="Search in transcript...">
+      <div id="searchResults"></div>
+    </div>
+    
+    <!-- AI Summary Section -->
+    <div id="summary-container" style="display: none;">
+      <h3>AI Summary</h3>
+      <div id="summary"></div>
+      <button id="summarizeBtn" class="action-btn">Generate Summary</button>
+    </div>
+    
+    <!-- Transcript Display -->
+    <div id="transcript-container">
+      <div id="transcript"></div>
+    </div>
+    
+    <div id="actions" style="display: none;">
+      <button id="copyBtn" class="action-btn">Copy to Clipboard</button>
+      <button id="downloadBtn" class="action-btn">Download as TXT</button>
+    </div>
+  </div>
+  
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <label for="apiKey">Anthropic API Key:</label>
+        <input type="password" id="apiKey" placeholder="sk-ant-...">
+        <p class="help-text">Get your API key from <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a></p>
+        <button id="saveSettings">Save Settings</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
